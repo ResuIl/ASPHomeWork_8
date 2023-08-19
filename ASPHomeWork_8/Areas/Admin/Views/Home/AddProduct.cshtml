@@ -1,0 +1,63 @@
+﻿@model ASPHomeWork_8.Models.ViewModels.ProductViewModel
+
+@{
+    ViewData["Title"] = "Add Product";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Add Product</title>
+    <style>
+        span {
+            color: red;
+            display: list-item;
+            margin-left: 39px;
+        }
+
+        input {
+            display: block;
+            margin: 21px;
+        }
+
+        label {
+            display: block;
+            padding: 20px 0 53px 0;
+            transform: translate(15px, -50px);
+            ;
+        }
+
+        div {
+            display: inline-block;
+        }
+
+        #submit {
+            margin: 21px;
+        }
+
+        #div2 {
+            width: 300px;
+        }
+
+    </style>
+</head>
+<body>
+    <form asp-controller="Product" asp-action="Add">
+        <div>
+            <label asp-for="Product!.Name" class="label-info">  </label>
+            <label asp-for="Product!.Price" class="label-info">   </label>
+            <label asp-for="Product!.Description" class="label-info">  </label>
+        </div>
+        <div id="div2">
+            <input asp-for="Product!.Name" />
+            <span asp-validation-for="Product!.Name"></span>
+            <input asp-for="Product!.Price" type="text" inputmode="decimal" />
+            <span asp-validation-for="Product!.Price"></span>
+            <input asp-for="Product!.Description" />
+            <span asp-validation-for="Product!.Description"></span>
+        </div>
+        <input id="submit" type="submit" />
+    </form>
+</body>
+</html>
